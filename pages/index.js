@@ -1,10 +1,10 @@
-import { useEffect } from 'react';
-import Meta from '../components/Meta';
-import styles from '../styles/Home.module.scss';
+import { useEffect } from "react";
+import Meta from "../components/Meta";
+import styles from "../styles/Home.module.scss";
 
 export default function Home() {
   useEffect(() => {
-    document.querySelector('video').playbackRate = 0.5;
+    document.querySelector("video").playbackRate = 0.5;
   }, []);
 
   return (
@@ -12,7 +12,11 @@ export default function Home() {
       <Meta title='Welcome | NicholasHerrick.com' />
       <div className={styles.showcase} data-aos='flip-up'>
         <div className={styles.videoContainer}>
-          <video src='video.mp4' autoPlay muted loop height='600'></video>
+          <video preload='auto' autoPlay muted loop height='600'>
+            <source src='video_H264.mp4' />
+            <source src='video_Ogg.ogv' />
+            <source src='video_WebM.webm' />
+          </video>
         </div>
         <div className={styles.content}>
           <h1 data-aos='zoom-in-down' data-aos-delay='300'>
